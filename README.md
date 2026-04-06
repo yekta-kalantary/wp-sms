@@ -638,7 +638,7 @@ docs/
 ## 7) QA و CI/CD
 
 ### پیش‌نیاز توسعه
-- PHP `8.1+`
+- PHP `8.1` تا `8.5`
 - Composer
 
 ### نصب dependencyهای توسعه
