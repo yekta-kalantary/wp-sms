@@ -47,6 +47,9 @@
 ## [نسخه] - YYYY-MM-DD
 
 ### Added
+- پیاده‌سازی اولیه پلاگین `core/yekta-sms-core` شامل bootstrap، contracts عمومی، registryها، dispatch orchestration، logging redaction، diagnostics، admin pages و REST admin endpoints اضافه شد.
+- migration اولیه جدول‌های `yekta_sms_dispatches` و `yekta_sms_logs` به‌همراه optionهای نسخه و تنظیمات اضافه شد.
+- اسکلت تست‌های unit/integration برای مسیرهای ضروری core (registry، redaction، dispatch/REST) اضافه شد.
 - ...
 
 ### Changed

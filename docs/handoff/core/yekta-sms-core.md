@@ -433,3 +433,13 @@ dispatch(request):
 
 ## 20) verdict
 **Ready with Assumptions**
+
+
+---
+
+## 13) وضعیت فعلی implementation (2026-04-06)
+
+- اسکلت production-ready اولیه برای `core/yekta-sms-core` ایجاد شد.
+- contracts پایه، registryها، resolver، dispatch pipeline، logging redaction، diagnostics runner، admin foundation و REST controllerهای admin-safe پیاده‌سازی شدند.
+- migration جدول‌های dispatch/log و optionهای نسخه/تنظیمات اضافه شد.
+- تست‌های اولیه برای duplicate slug و redaction اضافه شده و بقیه سناریوهای اجباری به‌صورت TODO تستی ثبت شدند.
