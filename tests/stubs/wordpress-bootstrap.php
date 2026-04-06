@@ -88,3 +88,17 @@ if (!defined('YEKTA_SMS_INTEGRATION_WC_VERSION')) {
 if (!defined('YEKTA_SMS_GATEWAY_SMSIR_VERSION')) {
     define('YEKTA_SMS_GATEWAY_SMSIR_VERSION', '0.1.0');
 }
+
+if (!function_exists('wp_json_encode')) {
+    function wp_json_encode($value) {
+        return json_encode($value);
+    }
+}
+
+if (!defined('YEKTA_SMS_INTEGRATION_EDD_SLUG')) {
+    define('YEKTA_SMS_INTEGRATION_EDD_SLUG', 'yekta-integration-edd');
+}
+
+if (!defined('YEKTA_SMS_INTEGRATION_EDD_VERSION')) {
+    define('YEKTA_SMS_INTEGRATION_EDD_VERSION', '0.1.0');
+}
