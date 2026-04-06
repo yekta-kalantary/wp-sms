@@ -73,6 +73,8 @@
 ## Unreleased
 
 ### Added
+- پیاده‌سازی اولیه پلاگین `geateway/yekta-geateway-smsir` شامل registration در core، validation تنظیمات، SMS.ir HTTP adapter، health check، error mapping و response normalization اضافه شد.
+- اسکلت تست‌های unit/integration برای مسیرهای validation، endpoint selection، error mapping و dependency guard در پلاگین SMS.ir اضافه شد.
 - ساختار مستندات monorepo برای هدایت AI Agentها اضافه شد.
 - فایل‌های `README.md`، `AGENTS.md` و `CONTRIBUTING.md` اضافه شدند.
 - اسناد معماری پایه شامل `plugin-boundaries`، `contracts` و `compatibility` اضافه شدند.
