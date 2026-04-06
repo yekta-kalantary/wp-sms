@@ -33,7 +33,7 @@ final class PlaceholderRegistry
         preg_match_all('/\{([a-z0-9_.]+)\}/i', $template, $matches);
         $unknown = [];
 
-        foreach (($matches[1] ?? []) as $token) {
+        foreach ($matches[1] as $token) {
             if (!array_key_exists($token, $placeholders)) {
                 $unknown[] = $token;
             }

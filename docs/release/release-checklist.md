@@ -178,10 +178,13 @@
 
 ## 11) packaging readiness
 
+- [ ] workflow `Package Plugins` برای شاخه `main` سبز است
+- [ ] artifact با نام `yekta-plugin-packages` تولید شده است
 - [ ] نسخه‌ها هماهنگ شده‌اند
 - [ ] headerها و metadata درست هستند
 - [ ] فایل‌های لازم در بسته موجودند
 - [ ] فایل‌های غیرضروری در بسته نیستند
+- [ ] ZIPها داخل git commit نشده‌اند
 - [ ] docs مرتبط کنار release قابل‌دسترسی هستند
 
 ---

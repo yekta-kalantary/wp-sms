@@ -1,2 +1,6 @@
 .DS_Store
-.idea
+.idea/
+/vendor/
+/dist/
+/.phpstan-cache/
+/.phpunit.result.cache

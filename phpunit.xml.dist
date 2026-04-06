@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/autoload.php"
+         colors="true"
+         executionOrder="depends,defects"
+         beStrictAboutChangesToGlobalState="false"
+         failOnRisky="false"
+         failOnWarning="false">
+    <testsuites>
+        <testsuite name="Core">
+            <directory suffix="Test.php">core/tests</directory>
+        </testsuite>
+        <testsuite name="GatewaySmsIr">
+            <directory suffix="Test.php">geateway/yekta-geateway-smsir/tests</directory>
+        </testsuite>
+        <testsuite name="IntegrationWooCommerce">
+            <directory suffix="Test.php">integration/yekta-integration-woocomrce/tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

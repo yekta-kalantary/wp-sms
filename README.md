@@ -633,3 +633,41 @@ docs/
 
 بدون این فایل‌ها هم AI Agent می‌تواند کار را شروع کند،  
 اما با این فایل‌ها دقت، سرعت و ثبات تصمیم‌ها بیشتر می‌شود.
+---
+
+## 7) QA و CI/CD
+
+### پیش‌نیاز توسعه
+- PHP `8.1+`
+- Composer
+
+### نصب dependencyهای توسعه
+```bash
+composer install
+```
+
+### commandهای استاندارد QA
+```bash
+composer lint         # PHPCS (WPCS)
+composer format       # PHPCBF auto-fix
+composer format-check # PHPCBF dry-run
+composer stan         # PHPStan
+composer test         # PHPUnit
+composer qa           # lint + stan + test
+```
+
+### بسته‌بندی پلاگین‌ها
+```bash
+composer package
+```
+
+خروجی‌ها در `dist/` ساخته می‌شوند:
+- `dist/yekta-sms-core.zip`
+- `dist/yekta-geateway-smsir.zip`
+- `dist/yekta-integration-woocomrce.zip`
+
+> ZIPها artifact هستند و نباید به‌صورت خودکار commit شوند.
+
+### GitHub Actions
+- `CI` روی `pull_request` و `push` به `main` اجرا می‌شود و QA را enforce می‌کند.
+- `Package Plugins` فقط روی `push` به `main` اجرا می‌شود، بعد از QA بسته‌ها را می‌سازد و artifact منتشر می‌کند.
