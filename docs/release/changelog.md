@@ -73,6 +73,9 @@
 ## Unreleased
 
 ### Added
+- زیرساخت CI/CD و QA monorepo اضافه شد: workflowهای GitHub Actions برای `pull_request`/`push` به `main`، اجرای PHPCS/PHPCBF/PHPStan/PHPUnit و summary خروجی.
+- اسکریپت packaging خودکار برای تولید ZIP مستقل installable هر سه پلاگین در `dist/` اضافه شد.
+- foundation ابزارهای توسعه (`composer.json`، `phpcs.xml.dist`، `phpstan.neon.dist`، `phpunit.xml.dist`، `.editorconfig`، `.gitattributes`) اضافه شد.
 - پیاده‌سازی اولیه پلاگین `integration/yekta-integration-woocomrce` شامل dependency check، اعلام compatibility (HPOS/Blocks)، ثبت triggerهای WooCommerce، mapping settings، recipient resolution، placeholder rendering، idempotency، manual resend و order troubleshooting UI اضافه شد.
 - پیاده‌سازی اولیه پلاگین `geateway/yekta-geateway-smsir` شامل registration در core، validation تنظیمات، SMS.ir HTTP adapter، health check، error mapping و response normalization اضافه شد.
 - اسکلت تست‌های unit/integration برای مسیرهای validation، endpoint selection، error mapping و dependency guard در پلاگین SMS.ir اضافه شد.

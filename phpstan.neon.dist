@@ -1,0 +1,18 @@
+parameters:
+    level: 5
+    paths:
+        - core/src
+        - geateway/yekta-geateway-smsir/src
+        - integration/yekta-integration-woocomrce/src
+    tmpDir: .phpstan-cache
+    bootstrapFiles:
+        - tests/stubs/wordpress-bootstrap.php
+    scanFiles:
+        - vendor/php-stubs/wordpress-stubs/wordpress-stubs.php
+        - vendor/php-stubs/woocommerce-stubs/woocommerce-stubs.php
+        - core/yekta-sms-core.php
+        - geateway/yekta-geateway-smsir/yekta-geateway-smsir.php
+        - integration/yekta-integration-woocomrce/yekta-integration-woocomrce.php
+    treatPhpDocTypesAsCertain: false
+
+includes: []

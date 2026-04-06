@@ -74,11 +74,6 @@ final class WooSmsOrchestrator
             }
 
             $result = $this->dispatcher->dispatch($built['request']);
-            $dispatchId = (int) ($result->meta['dispatch_id'] ?? 0);
-            if ($dispatchId > 0) {
-                $this->idempotency->mark($order, $key, $dispatchId);
-            }
-
             if (!empty($mapping['add_order_note']) || !empty($global['write_order_notes'])) {
                 $order->add_order_note(
                     sprintf(

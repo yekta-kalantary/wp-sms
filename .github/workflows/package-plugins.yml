@@ -1,0 +1,55 @@
+name: Package Plugins
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  package:
+    name: QA + Package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+
+      - name: Install dependencies (dev)
+        run: composer install --no-interaction --no-progress
+
+      - name: Run QA gate
+        run: composer qa
+
+      - name: Build plugin ZIP packages
+        run: composer package
+
+      - name: Upload plugin ZIP artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: yekta-plugin-packages
+          path: dist/*.zip
+          if-no-files-found: error
+
+      - name: Packaging summary
+        run: |
+          {
+            echo "## Packaged Plugins"
+            echo ""
+            echo "| ZIP | Size (bytes) |"
+            echo "|---|---:|"
+            for file in dist/*.zip; do
+              size=$(wc -c < "$file" | tr -d ' ')
+              echo "| $(basename "$file") | $size |"
+            done
+            echo ""
+            echo "### Excluded from package"
+            echo "- tests/, docs/, .github/, scripts/"
+            echo "- phpunit/phpstan/phpcs configs"
+            echo "- composer files and local caches"
+          } >> "$GITHUB_STEP_SUMMARY"

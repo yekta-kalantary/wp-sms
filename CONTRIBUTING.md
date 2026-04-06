@@ -364,3 +364,31 @@ Refactor مجاز است فقط اگر:
 - کیفیت
 - مستندات
 - حفظ معماری
+
+---
+
+## 15) QA commandهای اجباری قبل از PR
+
+قبل از ارسال PR این commandها را در ریشه monorepo اجرا کن:
+
+```bash
+composer install
+composer lint
+composer format-check
+composer stan
+composer test
+```
+
+اگر نیاز به auto-fix بود:
+
+```bash
+composer format
+```
+
+### بسته‌بندی محلی برای validation release
+
+```bash
+composer package
+```
+
+خروجی ZIP فقط برای validation/release artifact است و نباید داخل git commit شود.

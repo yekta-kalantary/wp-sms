@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ruleset name="Yekta SMS Baseline WPCS">
+    <description>WordPress-oriented baseline checks focused on security and runtime safety for the existing monorepo codebase.</description>
+
+    <arg name="basepath" value="."/>
+    <arg name="colors"/>
+    <arg name="parallel" value="4"/>
+    <arg value="sp"/>
+
+    <file>core</file>
+    <file>geateway</file>
+    <file>integration</file>
+    <file>tests</file>
+
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/dist/*</exclude-pattern>
+    <exclude-pattern>*/.github/*</exclude-pattern>
+
+    <!-- Keep WPCS in use, but start with high-signal checks that can run immediately. -->
+        <rule ref="WordPress.Security.NonceVerification"/>
+    <rule ref="WordPress.Security.ValidatedSanitizedInput"/>
+    <rule ref="WordPress.WP.Capabilities"/>
+    <rule ref="WordPress.PHP.DiscouragedPHPFunctions"/>
+</ruleset>
