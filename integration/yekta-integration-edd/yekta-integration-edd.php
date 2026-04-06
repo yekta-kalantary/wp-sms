@@ -1,0 +1,41 @@
+<?php
+/**
+ * Plugin Name: Yekta Integration EDD
+ * Description: Easy Digital Downloads integration for Yekta SMS Core.
+ * Version: 0.1.0
+ * Author: Yekta SMS
+ * Text Domain: yekta-integration-edd
+ * Requires PHP: 8.1
+ */
+
+declare(strict_types=1);
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+define('YEKTA_SMS_INTEGRATION_EDD_FILE', __FILE__);
+define('YEKTA_SMS_INTEGRATION_EDD_PATH', plugin_dir_path(__FILE__));
+define('YEKTA_SMS_INTEGRATION_EDD_VERSION', '0.1.0');
+define('YEKTA_SMS_INTEGRATION_EDD_SLUG', 'yekta-integration-edd');
+
+spl_autoload_register(
+    static function (string $class): void {
+        $prefix = 'YektaSMS\\Integration\\EDD\\';
+        if (strpos($class, $prefix) !== 0) {
+            return;
+        }
+
+        $relative = substr($class, strlen($prefix));
+        $path = YEKTA_SMS_INTEGRATION_EDD_PATH . 'src/' . str_replace('\\', '/', $relative) . '.php';
+
+        if (file_exists($path)) {
+            require_once $path;
+        }
+    }
+);
+
+add_action('plugins_loaded', static function (): void {
+    load_plugin_textdomain('yekta-integration-edd', false, dirname(plugin_basename(__FILE__)) . '/languages');
+    (new YektaSMS\Integration\EDD\Bootstrap\Plugin())->boot();
+});

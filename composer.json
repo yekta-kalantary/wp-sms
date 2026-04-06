@@ -18,7 +18,8 @@
     "psr-4": {
       "YektaSMS\\Core\\": "core/src/",
       "YektaSMS\\Gateway\\SmsIr\\": "geateway/yekta-geateway-smsir/src/",
-      "YektaSMS\\Integration\\WooComrce\\": "integration/yekta-integration-woocomrce/src/"
+      "YektaSMS\\Integration\\WooComrce\\": "integration/yekta-integration-woocomrce/src/",
+      "YektaSMS\\Integration\\EDD\\": "integration/yekta-integration-edd/src/"
     }
   },
   "autoload-dev": {
