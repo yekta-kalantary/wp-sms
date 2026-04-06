@@ -73,6 +73,7 @@
 ## Unreleased
 
 ### Added
+- پیاده‌سازی اولیه پلاگین `integration/yekta-integration-woocomrce` شامل dependency check، اعلام compatibility (HPOS/Blocks)، ثبت triggerهای WooCommerce، mapping settings، recipient resolution، placeholder rendering، idempotency، manual resend و order troubleshooting UI اضافه شد.
 - پیاده‌سازی اولیه پلاگین `geateway/yekta-geateway-smsir` شامل registration در core، validation تنظیمات، SMS.ir HTTP adapter، health check، error mapping و response normalization اضافه شد.
 - اسکلت تست‌های unit/integration برای مسیرهای validation، endpoint selection، error mapping و dependency guard در پلاگین SMS.ir اضافه شد.
 - ساختار مستندات monorepo برای هدایت AI Agentها اضافه شد.
